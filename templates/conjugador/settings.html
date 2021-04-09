@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Settings{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+
+      {% for i in range(0,len):%}
+      <div>
+          <input type="checkbox" id="{{ ldt[i] }}" name="{{ ldt[i] }}" {%if liste_temps[i]==1 %}checked{%endif%}>
+          <label for="{{ ldt[i] }}">{{ ldt[i] }}</label>
+      </div>
+      {% endfor %}
+      <div>
+          <input type="submit" id='save' value="Sauvegarder et quitter">
+          <input type="checkbox" value="on">
+      </div>
+  </form>
+{% endblock %}
